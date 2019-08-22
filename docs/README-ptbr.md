@@ -13,16 +13,16 @@
   <a href="https://www.npmjs.com/package/standard"><img src="https://img.shields.io/npm/v/standard.svg" alt="npm version"></a>
 </p>
 
-<h4 align="center">Um Guia de Estilo JavaScript para a todos governar</h4>
-
 <p align="center">
-  <a href="README-en.md">English</a> •
-  <a href="README-esla.md">Español (Latinoamérica)</a> •
-  <a href="README-iteu.md">Italiano (Italian)</a> •
-  <a href="README-kokr.md">한국어 (Korean)</a> •
-  <a href="README-ptbr.md">Português (Brasil)</a> •
-  <a href="README-zhcn.md">简体中文 (Simplified Chinese)</a> •
-  <a href="README-zhtw.md">繁體中文 (Taiwanese Mandarin)</a>
+  <a href="/docs/README-en.md">English</a> •
+  <a href="/docs/README-esla.md">Español (Latinoamérica)</a> •
+  <a href="/docs/README-fr.md">Français</a> •
+  <a href="/docs/README-iteu.md">Italiano (Italian)</a> •
+  <a href="/docs/README-ja.md">日本語 (Japanese)</a> •
+  <a href="/docs/README-kokr.md">한국어 (Korean)</a> •
+  <a href="/docs/README-ptbr.md">Português (Brasil)</a> •
+  <a href="/docs/README-zhcn.md">简体中文 (Simplified Chinese)</a> •
+  <a href="/docs/README-zhtw.md">繁體中文 (Taiwanese Mandarin)</a>
 </p>
 
 <br>
@@ -45,7 +45,7 @@ npm install standard
 - **2 espaços** – para identação
 - **Aspas simples para strings** – exceto para evitar escapamentos
 - **Sem variáveis não-utilizadas** – resolve *uma porrada* de bugs!
-- **Sem vírgulas-e-vírgula** – [Dá][1] [boa.][2] [Sério!][3]
+- **Sem ponto-e-vírgulas** – [Dá][1] [boa.][2] [Sério!][3]
 - **Nunca comece uma linha com  `(`, `[`, ou `` ` ``**
   - Esse é o único **problema** em omitir ponto-e-vírgula – *checado automaticamente pra você!*
   - [Mais detalhes][4]
@@ -61,8 +61,8 @@ npm install standard
 [1]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [2]: http://inimino.org/~inimino/blog/javascript_semicolons
 [3]: https://www.youtube.com/watch?v=gsfbh17Ax9I
-[4]: RULES.md#semicolons
-[5]: RULES.md#javascript-standard-style
+[4]: RULES-ptbr.md#ponto-e-v%C3%ADrgula
+[5]: RULES-ptbr.md#javascript-standard-style
 
 Para ter uma idéia melhor, dê uma olhada
 [num arquivo amostra](https://github.com/webtorrent/bittorrent-dht/blob/master/client.js) escrito no JavaScript Standard Style, ou dê uma olhada em alguns dos
@@ -447,11 +447,22 @@ Para uma lista de quais variávies globais estão disponíveis nesses ambientes,
 
 Curioso você perguntar!
 
-```sh
-#!/bin/sh
+```bash
+#!/bin/bash
+
 # Ensure all javascript files staged for commit pass standard code style
-git diff --name-only --cached --relative | grep '\.jsx\?$' | xargs standard
-if [ $? -ne 0 ]; then exit 1; fi
+function xargs-r() {
+  # Portable version of "xargs -r". The -r flag is a GNU extension that
+  # prevents xargs from running if there are no input files.
+  if IFS= read -r -d $'\n' path; then
+    { echo "$path"; cat; } | xargs $@
+  fi
+}
+git diff --name-only --cached --relative | grep '\.jsx\?$' | sed 's/[^[:alnum:]]/\\&/g' | xargs-r -E '' -t standard
+if [[ $? -ne 0 ]]; then
+  echo 'JavaScript Standard Style errors were detected. Aborting commit.'
+  exit 1
+fi
 ```
 
 Alternativamente, [overcommit](https://github.com/brigade/overcommit) é um gerenciador de ganchos Git que incluem suporte para rodar `standard` como um gancho pre-commit de Git.

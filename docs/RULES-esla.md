@@ -1,13 +1,15 @@
 # JavaScript Standard Style
 
 <p align="center">
-  <a href="RULES-en.md">English</a> •
-  <a href="RULES-esla.md">Español (Latinoamérica)</a> •
-  <a href="RULES-iteu.md">Italiano (Italian)</a> •
-  <a href="RULES-kokr.md">한국어 (Korean)</a> •
-  <a href="RULES-ptbr.md">Português (Brasil)</a> •
-  <a href="RULES-zhcn.md">简体中文 (Simplified Chinese)</a> •
-  <a href="RULES-zhtw.md">繁體中文 (Taiwanese Mandarin)</a>
+  <a href="/docs/RULES-en.md">English</a> •
+  <a href="/docs/RULES-esla.md">Español (Latinoamérica)</a> •
+  <a href="/docs/RULES-fr.md">Français</a> •
+  <a href="/docs/RULES-iteu.md">Italiano (Italian)</a> •
+  <a href="/docs/RULES-ja.md">日本語 (Japanese)</a> •
+  <a href="/docs/RULES-kokr.md">한국어 (Korean)</a> •
+  <a href="/docs/RULES-ptbr.md">Português (Brasil)</a> •
+  <a href="/docs/RULES-zhcn.md">简体中文 (Simplified Chinese)</a> •
+  <a href="/docs/RULES-zhtw.md">繁體中文 (Taiwanese Mandarin)</a>
 </p>
 
 [![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
@@ -369,16 +371,16 @@ La mejor manera de aprender acerca de `standard` es instalarlo darle una prueba 
   ```js
   var person = {
     set name (value) {    // ✗ avoid
-      this.name = value
+      this._name = value
     }
   }
 
   var person = {
     set name (value) {
-      this.name = value
+      this._name = value
     },
     get name () {         // ✓ ok
-      return this.name
+      return this._name
     }
   }
   ```
@@ -749,7 +751,11 @@ La mejor manera de aprender acerca de `standard` es instalarlo darle una prueba 
   ```js
   var score = 100
   function game () {
-    score: 50         // ✗ avoid
+    score: while (true) {      // ✗ avoid
+      score -= 10
+      if (score > 0) continue score
+      break
+    }
   }
   ```
 

@@ -1,13 +1,15 @@
 # JavaScript Standard Style
 
 <p align="center">
-  <a href="RULES-en.md">English</a> •
-  <a href="RULES-esla.md">Español (Latinoamérica)</a> •
-  <a href="RULES-iteu.md">Italiano (Italian)</a> •
-  <a href="RULES-kokr.md">한국어 (Korean)</a> •
-  <a href="RULES-ptbr.md">Português (Brasil)</a> •
-  <a href="RULES-zhcn.md">简体中文 (Simplified Chinese)</a> •
-  <a href="RULES-zhtw.md">繁體中文 (Taiwanese Mandarin)</a>
+  <a href="/docs/RULES-en.md">English</a> •
+  <a href="/docs/RULES-esla.md">Español (Latinoamérica)</a> •
+  <a href="/docs/RULES-fr.md">Français</a> •
+  <a href="/docs/RULES-iteu.md">Italiano (Italian)</a> •
+  <a href="/docs/RULES-ja.md">日本語 (Japanese)</a> •
+  <a href="/docs/RULES-kokr.md">한국어 (Korean)</a> •
+  <a href="/docs/RULES-ptbr.md">Português (Brasil)</a> •
+  <a href="/docs/RULES-zhcn.md">简体中文 (Simplified Chinese)</a> •
+  <a href="/docs/RULES-zhtw.md">繁體中文 (Taiwanese Mandarin)</a>
 </p>
 
 [![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
@@ -213,7 +215,7 @@ A melhor forma de aprender sobre o `standard` é instalar e usar no seu código.
       verbose = true
   ```
 
-* **Coloque parẽnteses adicionais** em declarações em condições. Isso torna mais claro que a expressão é uma declaração (`=`) e não um typo de equidade (`===`)
+* **Coloque parênteses adicionais** em declarações em condições. Isso torna mais claro que a expressão é uma declaração (`=`) e não um typo de equidade (`===`)
 
   ```js
   // ✓ ok
@@ -226,7 +228,7 @@ A melhor forma de aprender sobre o `standard` é instalar e usar no seu código.
     // ...
   }
   ```
-*
+
 ## Ponto-e-vírgula
 
 * Não use. (veja: [1](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding), [2](http://inimino.org/%7Einimino/blog/javascript_semicolons), [3](https://www.youtube.com/watch?v=gsfbh17Ax9I))
