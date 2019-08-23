@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 14.0.2 - 2019-08-22
+
+- Relax rule: Don't check indentation on template literal children (work around for ESLint bug) ([indent](https://eslint.org/docs/rules/indent)) [#1385](https://github.com/standard/standard/issues/1385)
+
+## 14.0.1 - 2019-08-22
+
+- Relax rule (temporarily, to workaround a bug): Disallow missing parentheses around multiline JSX ([react/jsx-wrap-multilines](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md)) [#1382](https://github.com/standard/standard/issues/1382)
+
 ## 14.0.0 - 2019-08-19
 
 We're super excited to announce `standard` 14!
@@ -20,7 +28,7 @@ When you upgrade, consider running `standard --fix` to automatically format your
 code to match the newly added rules.
 
 `standard` keeps growing! The latest stats show that `standard` and
-`eslint-standard-*` shareable configs are dependended upon by **318,512 GitHub
+`eslint-standard-*` shareable configs are depended upon by **318,512 GitHub
 repositories** and **33,349 public npm packages**. Thanks for spreading the
 word!
 
@@ -55,7 +63,7 @@ GitHub is matching donations, so your dollars go twice as far! 🚀
 - Require JSX attributes and logical expressions to be indented correctly ([react/jsx-indent](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md)) [#1370](https://github.com/standard/standard/issues/1370) [1%]
 - Require JSX event handler names to follow conventions ([react/jsx-handler-names](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-handler-names.md)) [#1371](https://github.com/standard/standard/issues/1371) [1%]
 - Disallow spaces inside of curly braces in JSX expressions in children ([react/jsx-curly-spacing](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md)) [#1373](https://github.com/standard/standard/issues/1373) [1%]
-- Require JSX closing bracket to be aligned with the opening tag ([react/jsx-closing-bracket-location](https://eslint.org/docs/rules/react/jsx-closing-bracket-location)) [#1361](https://github.com/standard/standard/issues/1361) [1%]
+- Require JSX closing bracket to be aligned with the opening tag ([react/jsx-closing-bracket-location](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)) [#1361](https://github.com/standard/standard/issues/1361) [1%]
 - Disallow unnecessary curly braces in JSX props and children ([react/jsx-curly-brace-presence](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md)) [#1366](https://github.com/standard/standard/issues/1366) [1%]
 - Disallow missing `key` prop in JSX elements that likely require a `key` prop ([react/jsx-key](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md)) [#1369](https://github.com/standard/standard/issues/1369) [1%]
 - Disallow import of modules using absolute paths ([import/no-absolute-path](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-absolute-path.md)) [#861](https://github.com/standard/standard/issues/861) [#1343](https://github.com/standard/standard/issues/1343) [0%]
@@ -65,8 +73,8 @@ GitHub is matching donations, so your dollars go twice as far! 🚀
 - Prevent usage of unsafe `target='_blank'` in JSX links ([react/jsx-no-target-blank](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md)) [#1367](https://github.com/standard/standard/issues/1367) [0%]
 - Require shorthand form for JSX fragments ([react/jsx-fragments](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md)) [#1364](https://github.com/standard/standard/issues/1364) [0%]
 - Require PascalCase for user-defined JSX components ([react/jsx-pascal-case](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)) [#1365](https://github.com/standard/standard/issues/1365) [0%]
-- Require JSX closing tag to be aligned with the opening tag ([react/jsx-closing-tag-location](https://eslint.org/docs/rules/react/jsx-closing-tag-location)) [#1358](https://github.com/standard/standard/issues/1358) [0%]
-- Disallow missing parentheses around multiline JSX ([react/jsx-wrap-multilines](https://eslint.org/docs/rules/react/jsx-wrap-multilines)) [#710](https://github.com/standard/standard/issues/710) [0%]
+- Require JSX closing tag to be aligned with the opening tag ([react/jsx-closing-tag-location](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md)) [#1358](https://github.com/standard/standard/issues/1358) [0%]
+- Disallow missing parentheses around multiline JSX ([react/jsx-wrap-multilines](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md)) [#710](https://github.com/standard/standard/issues/710) [0%]
 - Require pipeline operators to appear at the start of a line ([operator-linebreak](https://eslint.org/docs/rules/operator-linebreak)) [eslint-config-standard/#121](https://github.com/standard/eslint-config-standard/pull/121) [0%]
 - Disallow use of the void operator ([no-void](https://eslint.org/docs/rules/no-void)) [eslint-config-standard/#135](https://github.com/standard/eslint-config-standard/pull/135) [0%]
 
